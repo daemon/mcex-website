@@ -1,0 +1,8 @@
+bin
+.idea
+*.iml
+*.ipr
+*.iws
+.gradle
+build
+Dockerfile
