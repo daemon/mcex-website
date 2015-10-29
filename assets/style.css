@@ -1,0 +1,17 @@
+html, body
+{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#cons
+{
+    position: relative;
+    top: 30%;
+    width: 448px;
+    height: 166px;
+    margin: 0 auto;
+    background-image: url('/img/mcex.png');
+}

@@ -19,15 +19,16 @@ task fatJar(type: Jar) {
     manifest {
         attributes 'Implementation-Title': 'MCEX Website',
                    'Implementation-Version': version,
-                   'Main-Class': 'xyz.mcex.web.MainVerticle'
+                   'Main-Class': 'io.vertx.core.Starter',
+                   'Main-Verticle': 'xyz.mcex.website.MainVerticle'
     }
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
 
 dependencies {
-    compile group: 'io.vertx', name: 'vertx-core', version: '3.0.0'
-    compile group: 'io.vertx',  name: 'vertx-web', version: '3.0.0'
+    compile group: 'io.vertx', name: 'vertx-core', version: '3.1.0'
+    compile group: 'io.vertx',  name: 'vertx-web', version: '3.1.0'
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.+'
     compile group: 'de.neuland-bfi', name: 'jade4j', version: '0.4.+'
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.4.1'
