@@ -10,8 +10,8 @@ html, body
 {
     position: relative;
     top: 30%;
-    width: 448px;
-    height: 166px;
+    width: 465px;
+    height: 176px;
     margin: 0 auto;
-    background-image: url('/img/mcex.png');
+    background-image: url('/img/mcex-large.png');
 }
