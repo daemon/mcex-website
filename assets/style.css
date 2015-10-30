@@ -4,14 +4,118 @@ html, body
     margin: 0;
     width: 100%;
     height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #111;
+    background-color: #F2F2F2;
+    line-height: 300%;
 }
 
-#cons
+#container
 {
-    position: relative;
-    top: 30%;
-    width: 465px;
-    height: 176px;
+    max-width: 1280px;
+    width: 80%;
+    min-width: 800px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin: 0 auto;
-    background-image: url('/img/mcex-large.png');
+}
+
+#left-logo
+{
+    display: inline-block;
+}
+
+#right-nav
+{
+    float: right;
+    padding-top: 20px;
+    display: inline-block;
+}
+
+a
+{
+    color: #121212;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: #666;
+    text-decoration: underline;
+}
+
+#right-nav ul
+{
+    list-style: none;
+    list-style-image; none;
+}
+
+#right-nav ul li
+{
+    float: left;
+    margin-left: 40px;
+    font-size: 16pt;
+}
+
+h2
+{
+    font-size: 32pt;
+}
+
+div.left p
+{
+    width: 80%;
+    font-size: 24pt;
+}
+
+#top-navbar
+{
+    padding-top: 30px;
+}
+
+#front-pane
+{
+    width: 100%;
+}
+
+#front-pane .left
+{
+    display: inline-block;
+    width: 40%;
+}
+
+#front-pane .right
+{
+    float: right;
+    display: inline-block;
+    width: 55%;
+    padding-right: 5%;
+    padding-top: 5%;
+}
+
+button
+{
+  display: block;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  color: #121212;
+  font-weight: 300;
+  font-size: 24px;
+  padding: 10px 28px 10px 28px;
+  outline: none;
+  border-radius: 25px;
+  border: 1px solid;
+  border-color: #121212;
+  cursor: pointer;
+}
+
+button:hover
+{
+  background-color: #121212;
+  color: #F2F2F2;
+}
+
+#front-pane .right img
+{
+    float: right;
 }

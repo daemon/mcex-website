@@ -3,5 +3,22 @@ html(lang="en")
     head
         link(rel='stylesheet', href='/style.css')
         link(rel='icon', type='image/png', href='/img/favicon-32x32.png')
+        link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600', rel='stylesheet', type='text/css')
     body
-        div#cons
+        div#container
+            div#top-navbar
+                div#left-logo
+                    img(src='/img/mcex.png')
+                nav#right-nav
+                    ul
+                        li
+                            a(href='#') Login
+                        li
+                            a(href='#') Sign up
+            div#front-pane
+                div.left
+                    h2 The Minecraft Grand Exchange
+                    p Introducing MCEX, the first global economy platform for Minecraft servers.
+                    button Sign up
+                div.right
+                    img(src='/img/mcex-stocks.png')
