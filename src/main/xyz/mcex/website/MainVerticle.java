@@ -10,9 +10,9 @@ public class MainVerticle extends AbstractVerticle
 {
   private void attachRoutes(Router router, Logger logger)
   {
-    // Testing
-    logger.info("Attaching handler for endpoint /");
-    router.route("/").handler(new IndexHandler());
+    logger.info("Attaching handlers for endpoints");
+    router.route("/").handler(new JadeHandler("assets/index.jade"));
+    router.route("/signup").handler(new JadeHandler("assets/signup.jade"));
   }
 
   @Override
