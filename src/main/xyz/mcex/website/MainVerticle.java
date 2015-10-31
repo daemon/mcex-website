@@ -1,10 +1,13 @@
 package xyz.mcex.website;
 
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServer;
 import io.vertx.ext.web.Router;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import xyz.mcex.website.account.SignupHandler;
+import xyz.mcex.website.jade.handler.JadeHandler;
 
 public class MainVerticle extends AbstractVerticle
 {
@@ -12,7 +15,7 @@ public class MainVerticle extends AbstractVerticle
   {
     logger.info("Attaching handlers for endpoints");
     router.route("/").handler(new JadeHandler("assets/index.jade"));
-    router.route("/signup").handler(new JadeHandler("assets/signup.jade"));
+    router.route("/signup").handler(new SignupHandler());
   }
 
   @Override

@@ -7,7 +7,7 @@ html, body
     font-family: 'Source Sans Pro', sans-serif;
     color: #111;
     background-color: #F2F2F2;
-    line-height: 300%;
+    line-height: 3em;
 }
 
 #container
@@ -59,6 +59,8 @@ a:hover
 
 h2
 {
+    margin: 0px;
+    padding: 0px;
     font-size: 32pt;
 }
 
@@ -73,18 +75,18 @@ div.left p
     padding-top: 30px;
 }
 
-#front-pane
+.front-pane
 {
     width: 100%;
 }
 
-#front-pane .left
+.front-pane .left
 {
     display: inline-block;
     width: 40%;
 }
 
-#front-pane .right
+.front-pane .right
 {
     float: right;
     display: inline-block;
@@ -93,20 +95,36 @@ div.left p
     padding-top: 5%;
 }
 
+#signup-container
+{
+    padding-top: 15px;
+    width: 100%;
+}
+
+.input-large
+{
+    width: 50%;
+    max-width: 500px;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 10px;
+    font-size: 18pt;
+    display: block;
+}
+
 button
 {
-  display: block;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  color: #121212;
-  font-weight: 300;
-  font-size: 24px;
-  padding: 10px 28px 10px 28px;
-  outline: none;
-  border-radius: 25px;
-  border: 1px solid;
-  border-color: #121212;
-  cursor: pointer;
+    display: inline-block;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    color: #121212;
+    font-weight: 300;
+    font-size: 24px;
+    padding: 10px 28px 10px 28px;
+    outline: none;
+    border-radius: 25px;
+    border: 1px solid;
+    border-color: #121212;
+    cursor: pointer;
 }
 
 button:hover
@@ -115,7 +133,7 @@ button:hover
   color: #F2F2F2;
 }
 
-#front-pane .right img
+.front-pane .right img
 {
     float: right;
 }

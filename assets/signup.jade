@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    head
+        include ./includes/head.jade
+        script(src='https://www.google.com/recaptcha/api.js')
+    body
+        #container
+            include ./includes/top-navbar.jade
+            .front-pane
+                #signup-container
+                    h2 Create an account
+                    h3(style='color: red;') DO NOT ACTUALLY TRY TO MAKE AN ACCOUNT. WEBSITE HAS NO TLS YET AND IS INSECURE #{email}
+                    hr
+                    form(method='post', action='/signup')
+                        input.input-large(type='text', name='username', placeholder='Username')
+                        input.input-large(type='text', name='email', placeholder='E-mail')
+                        input.input-large(type='password', name='password', placeholder='Password')
+                        input.input-large(type='password', name='confirm-password', placeholder='Confirm password')
+                        .g-recaptcha(data-sitekey='6LcOBBATAAAAACVEP-_ixvXxuHm5Oq3b_VNUj8Sj')
+                        input.input-large-btn(type='submit', value='Submit')

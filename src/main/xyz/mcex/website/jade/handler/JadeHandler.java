@@ -1,12 +1,14 @@
-package xyz.mcex.website;
+package xyz.mcex.website.jade.handler;
 
-import com.sun.istack.internal.Nullable;
 import de.neuland.jade4j.Jade4J;
 import io.vertx.core.Handler;
+import io.vertx.core.http.HttpServerRequest;
 import io.vertx.ext.web.RoutingContext;
 import org.apache.logging.log4j.LogManager;
+import xyz.mcex.website.internals.Nullable;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 public class JadeHandler implements Handler<RoutingContext>
@@ -22,7 +24,15 @@ public class JadeHandler implements Handler<RoutingContext>
   public JadeHandler(String file, @Nullable Map<String, Object> model)
   {
     this._file = file;
-    this._model = model;
+    if (model == null)
+      this._model = new HashMap<>();
+    else
+      this._model = model;
+  }
+
+  public Map<String, Object> model()
+  {
+    return this._model;
   }
 
   @Override
@@ -30,10 +40,13 @@ public class JadeHandler implements Handler<RoutingContext>
   {
     try
     {
+      this.processRequest(context.request());
       context.response().setChunked(true).write(Jade4J.render(this._file, this._model)).end();
     } catch (IOException e)
     {
-      LogManager.getLogger("website").error("Rendering" + this._file + " failed");
+      LogManager.getLogger("website").error("Opening" + this._file + " failed");
     }
   }
+
+  public void processRequest(HttpServerRequest request)  { return; }
 }
