@@ -27,7 +27,6 @@ public abstract class JadeFormHandler extends JadeHandler
       @Override
       public void handle(Void event)
       {
-        System.out.println(context.request().formAttributes());
         JadeFormHandler.this.processFormData(context.request().formAttributes());
         JadeFormHandler.super.handle(context);
       }

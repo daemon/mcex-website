@@ -15,6 +15,8 @@ public class JadeHandler implements Handler<RoutingContext>
 {
   private final String _file;
   private final Map<String, Object> _model;
+  private boolean _redirect = false;
+  private String _redirectUrl = "";
 
   public JadeHandler(String file)
   {
@@ -35,13 +37,22 @@ public class JadeHandler implements Handler<RoutingContext>
     return this._model;
   }
 
+  public void setRedirect(String url)
+  {
+    this._redirect = true;
+    this._redirectUrl = url;
+  }
+
   @Override
   public void handle(RoutingContext context)
   {
     try
     {
       this.processRequest(context.request());
-      context.response().setChunked(true).write(Jade4J.render(this._file, this._model)).end();
+      if (!_redirect)
+        context.response().setChunked(true).write(Jade4J.render(this._file, this._model)).end();
+      else
+        context.response().setChunked(true).setStatusCode(301).putHeader("Location", this._redirectUrl);
     } catch (IOException e)
     {
       LogManager.getLogger("website").error("Opening" + this._file + " failed");
